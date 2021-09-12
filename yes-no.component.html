@@ -1,0 +1,10 @@
+
+<mat-form-field [appearance]="appearance">
+  <mat-label [textContent]="labelText" ></mat-label>
+  <mat-select matNativeControl name="car" >
+    <mat-option *ngFor="let blocked of blockedList" [value]="blocked" (onSelectionChange)="selectedValue.emit(blocked)">
+      {{blocked}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
