@@ -1,0 +1,18 @@
+::ng-deep .mat-option .mat-pseudo-checkbox {
+  display: none;
+}
+
+.mat-checkbox {
+  display: block;
+
+}
+
+::ng-deep label.mat-checkbox-layout {
+  display: block;
+  padding-left: 1em;
+}
+
+
+.mat-option {
+  padding: 0;
+}

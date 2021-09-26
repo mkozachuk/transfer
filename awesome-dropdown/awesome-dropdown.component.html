@@ -1,0 +1,27 @@
+<mat-form-field [appearance]="appearance" [formGroup]="form">
+  <mat-label>{{labelText}}</mat-label>
+  <mat-select [formControl]="innerFormControl" multiple>
+    <mat-option [value]="formattedList">
+
+      <mat-checkbox class="mat-option mat-option-text mat-checkbox-layout"
+                    [checked]="allComplete"
+                    [indeterminate]="someComplete()"
+                    (change)="setAll($event.checked)">{{selectAllText}}
+      </mat-checkbox>
+
+    </mat-option>
+    <mat-option *ngFor="let subtask of formattedList" [value]="subtask">
+      <mat-checkbox class="mat-option mat-option-text mat-checkbox-layout" [(ngModel)]="subtask.checked"
+                    [ngModelOptions]="{standalone: true}"
+                    (ngModelChange)="updateAllComplete()">
+        {{subtask.value}}
+      </mat-checkbox>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!--PREVIEW-->
+<div>
+  <p *ngFor="let a of formattedList">{{a.value + ' ' + a.checked }}</p>
+</div>
+<!--/PREVIEW-->
