@@ -1,0 +1,39 @@
+::ng-deep .mat-dialog-container {
+  max-height: 400px;
+  overflow: auto;
+  min-width: 800px;
+
+}
+
+.myDialog{
+  display: table;
+  width: 100%;
+}
+
+.leftPart {
+  //display: inline-flex;
+  width: 50%;
+  display: table-cell;
+
+
+}
+
+.rightPart {
+  width: 50%;
+  flex-direction: column;
+  align-items: center;
+  display: table-cell;
+
+
+}
+
+.checkboxes {
+  position: sticky;
+  top: 25%;
+  min-height: 2em;
+  margin: 10%;
+}
+
+#close-button{
+  float: right;
+}
