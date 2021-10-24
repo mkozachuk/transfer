@@ -1,0 +1,30 @@
+<app-actions (searchClick)="onSearchClick()" (addClick)="addNewClick()"></app-actions>
+<mat-card>
+  <mat-card-title *ngIf="addMode === ModeType.ADD" >Add new </mat-card-title>
+  <mat-card-title *ngIf="addMode === ModeType.EDIT" >Edit </mat-card-title>
+  <mat-card-title *ngIf="addMode === ModeType.SEARCH" >Search </mat-card-title>
+
+
+  <form [formGroup]="searchOrAddForm">
+    <mat-form-field>
+      <input matInput formControlName="keyingTool" placeholder="keyingTool">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="cypherType" placeholder="cypherType">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput formControlName="posKey" placeholder="posKey">
+    </mat-form-field>
+
+  </form>
+
+
+<!--  <button (click)="onSearchClick()" >Search</button>-->
+<!--  <button style="float: right" (click)="addNewClick()" *ngIf="!addMode" >Add new</button>-->
+  <div *ngIf="addMode === ModeType.ADD" style="display: flex">
+    <button mat-stroked-button (click)="saveNewClick()">Save new</button>
+    <button mat-stroked-button (click)="cancelOnSaveNew()" >Cancel</button>
+  </div>
+</mat-card>
